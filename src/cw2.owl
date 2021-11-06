@@ -1,0 +1,594 @@
+Prefix(:=<http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/dviga/ontologies/2020/4/cw2>
+
+Declaration(Class(:Bakerloo_L2))
+Declaration(Class(:Domain_entity))
+Declaration(Class(:Driver))
+Declaration(Class(:Independenty_entity))
+Declaration(Class(:Jubilee_L1))
+Declaration(Class(:Line))
+Declaration(Class(:LineStation_1))
+Declaration(Class(:LineStation_2))
+Declaration(Class(:Passenger))
+Declaration(Class(:Person))
+Declaration(Class(:Station))
+Declaration(Class(:Station_L1))
+Declaration(Class(:Station_L2))
+Declaration(Class(:Train))
+Declaration(ObjectProperty(:cStation_L1))
+Declaration(ObjectProperty(:cStation_L2))
+Declaration(ObjectProperty(:containsStation))
+Declaration(ObjectProperty(:drives))
+Declaration(ObjectProperty(:go))
+Declaration(ObjectProperty(:hasAge))
+Declaration(ObjectProperty(:hasDriver))
+Declaration(ObjectProperty(:isInBakerlooLine))
+Declaration(ObjectProperty(:isInJubileeLine))
+Declaration(ObjectProperty(:isPartOf))
+Declaration(ObjectProperty(:next))
+Declaration(ObjectProperty(:take))
+Declaration(ObjectProperty(:toward))
+Declaration(DataProperty(:age))
+Declaration(DataProperty(:driverID))
+Declaration(DataProperty(:first_name))
+Declaration(DataProperty(:gender))
+Declaration(DataProperty(:last_name))
+Declaration(DataProperty(:trainID))
+Declaration(NamedIndividual(:Baker_Street))
+Declaration(NamedIndividual(:Bermondsey))
+Declaration(NamedIndividual(:Bond_Street))
+Declaration(NamedIndividual(:Canada_Water))
+Declaration(NamedIndividual(:Canary_Wharf))
+Declaration(NamedIndividual(:Canning_Town))
+Declaration(NamedIndividual(:Canons_Park))
+Declaration(NamedIndividual(:Charing_Cross))
+Declaration(NamedIndividual(:Dollis_Hill))
+Declaration(NamedIndividual(:Driver_1))
+Declaration(NamedIndividual(:Driver_2))
+Declaration(NamedIndividual(:Driver_3))
+Declaration(NamedIndividual(:Driver_4))
+Declaration(NamedIndividual(:Edgeware_Road))
+Declaration(NamedIndividual(:Embankment))
+Declaration(NamedIndividual(:Finchley_Road))
+Declaration(NamedIndividual(:Green_Park))
+Declaration(NamedIndividual(:Harlesden))
+Declaration(NamedIndividual(:Kensal_Green))
+Declaration(NamedIndividual(:Kenton))
+Declaration(NamedIndividual(:KilBurn_Park))
+Declaration(NamedIndividual(:Kilburn))
+Declaration(NamedIndividual(:Kingsbury))
+Declaration(NamedIndividual(:Lambeth_North))
+Declaration(NamedIndividual(:London_Bridge))
+Declaration(NamedIndividual(:Maida_Vale))
+Declaration(NamedIndividual(:Marylebone))
+Declaration(NamedIndividual(:Neasden))
+Declaration(NamedIndividual(:North_Greenwich))
+Declaration(NamedIndividual(:North_Wembley))
+Declaration(NamedIndividual(:Oxford_Circus))
+Declaration(NamedIndividual(:Paddingoton))
+Declaration(NamedIndividual(:Passenger_1))
+Declaration(NamedIndividual(:Passenger_2))
+Declaration(NamedIndividual(:Passenger_3))
+Declaration(NamedIndividual(:Passenger_4))
+Declaration(NamedIndividual(:Piccadilly_Circus))
+Declaration(NamedIndividual(:Queens_Park))
+Declaration(NamedIndividual(:Queensbury))
+Declaration(NamedIndividual(:Regents_Park))
+Declaration(NamedIndividual(:ST_Johns_wood))
+Declaration(NamedIndividual(:South_Kenton))
+Declaration(NamedIndividual(:Southwark))
+Declaration(NamedIndividual(:Starnmore))
+Declaration(NamedIndividual(:Stonebridge_Park))
+Declaration(NamedIndividual(:Stratford))
+Declaration(NamedIndividual(:Swiss_Cottage))
+Declaration(NamedIndividual(:Train_1))
+Declaration(NamedIndividual(:Train_2))
+Declaration(NamedIndividual(:Train_3))
+Declaration(NamedIndividual(:Train_4))
+Declaration(NamedIndividual(:Warwick_Avenue))
+Declaration(NamedIndividual(:Waterloo))
+Declaration(NamedIndividual(:Wembley_Central))
+Declaration(NamedIndividual(:Wembley_Park))
+Declaration(NamedIndividual(:West_Ham))
+Declaration(NamedIndividual(:West_Hampstead))
+Declaration(NamedIndividual(:Westminster))
+Declaration(NamedIndividual(:Willesden_Green))
+Declaration(NamedIndividual(:Wilsenden_Junction))
+Declaration(NamedIndividual(<http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Elephant_&_Castle>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Harrow_&_Wealdstone>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :cStation_L1 (:cStation_L1)
+
+SubObjectPropertyOf(:cStation_L1 :containsStation)
+FunctionalObjectProperty(:cStation_L1)
+ObjectPropertyDomain(:cStation_L1 :Jubilee_L1)
+ObjectPropertyRange(:cStation_L1 :Station_L1)
+
+# Object Property: :cStation_L2 (:cStation_L2)
+
+SubObjectPropertyOf(:cStation_L2 :containsStation)
+FunctionalObjectProperty(:cStation_L2)
+ObjectPropertyDomain(:cStation_L2 :Bakerloo_L2)
+ObjectPropertyRange(:cStation_L2 :Station_L2)
+
+# Object Property: :containsStation (:containsStation)
+
+InverseObjectProperties(:containsStation :isPartOf)
+FunctionalObjectProperty(:containsStation)
+
+# Object Property: :drives (:drives)
+
+FunctionalObjectProperty(:drives)
+ObjectPropertyDomain(:drives :Driver)
+ObjectPropertyRange(:drives :Train)
+
+# Object Property: :go (:go)
+
+SubObjectPropertyOf(:go owl:topObjectProperty)
+
+# Object Property: :hasAge (:hasAge)
+
+SubObjectPropertyOf(:hasAge owl:topObjectProperty)
+
+# Object Property: :hasDriver (:hasDriver)
+
+ObjectPropertyDomain(:hasDriver :Train)
+ObjectPropertyRange(:hasDriver :Driver)
+
+# Object Property: :isInBakerlooLine (:isInBakerlooLine)
+
+SubObjectPropertyOf(:isInBakerlooLine :isPartOf)
+FunctionalObjectProperty(:isInBakerlooLine)
+ObjectPropertyDomain(:isInBakerlooLine :Station_L2)
+ObjectPropertyRange(:isInBakerlooLine :Bakerloo_L2)
+
+# Object Property: :isInJubileeLine (:isInJubileeLine)
+
+SubObjectPropertyOf(:isInJubileeLine :isPartOf)
+FunctionalObjectProperty(:isInJubileeLine)
+ObjectPropertyDomain(:isInJubileeLine :Station_L1)
+ObjectPropertyRange(:isInJubileeLine :Jubilee_L1)
+
+# Object Property: :isPartOf (:isPartOf)
+
+SubObjectPropertyOf(:isPartOf owl:topObjectProperty)
+FunctionalObjectProperty(:isPartOf)
+ObjectPropertyDomain(:isPartOf :Station)
+ObjectPropertyRange(:isPartOf :Line)
+
+# Object Property: :next (:next)
+
+SubObjectPropertyOf(:next owl:topObjectProperty)
+
+# Object Property: :take (:take)
+
+FunctionalObjectProperty(:take)
+ObjectPropertyDomain(:take :Person)
+ObjectPropertyRange(:take :Train)
+
+# Object Property: :toward (:toward)
+
+SubObjectPropertyOf(:toward owl:topObjectProperty)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :age (:age)
+
+FunctionalDataProperty(:age)
+DataPropertyDomain(:age :Person)
+DataPropertyRange(:age xsd:integer)
+
+# Data Property: :driverID (:driverID)
+
+SubDataPropertyOf(:driverID owl:topDataProperty)
+FunctionalDataProperty(:driverID)
+DataPropertyDomain(:driverID :Driver)
+DataPropertyRange(:driverID xsd:integer)
+
+# Data Property: :first_name (:first_name)
+
+SubDataPropertyOf(:first_name owl:topDataProperty)
+FunctionalDataProperty(:first_name)
+DataPropertyDomain(:first_name :Person)
+DataPropertyRange(:first_name xsd:string)
+
+# Data Property: :gender (:gender)
+
+SubDataPropertyOf(:gender owl:topDataProperty)
+FunctionalDataProperty(:gender)
+DataPropertyDomain(:gender :Person)
+DataPropertyRange(:gender xsd:string)
+
+# Data Property: :last_name (:last_name)
+
+SubDataPropertyOf(:last_name owl:topDataProperty)
+FunctionalDataProperty(:last_name)
+DataPropertyDomain(:last_name :Person)
+DataPropertyRange(:last_name xsd:string)
+
+# Data Property: :trainID (:trainID)
+
+SubDataPropertyOf(:trainID owl:topDataProperty)
+FunctionalDataProperty(:trainID)
+DataPropertyDomain(:trainID :Train)
+DataPropertyRange(:trainID xsd:integer)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Bakerloo_L2 (:Bakerloo_L2)
+
+SubClassOf(:Bakerloo_L2 :Line)
+DisjointClasses(:Bakerloo_L2 :Jubilee_L1)
+
+# Class: :Driver (:Driver)
+
+SubClassOf(:Driver :Person)
+
+# Class: :Independenty_entity (:Independenty_entity)
+
+SubClassOf(:Independenty_entity :Domain_entity)
+
+# Class: :Jubilee_L1 (:Jubilee_L1)
+
+SubClassOf(:Jubilee_L1 :Line)
+
+# Class: :Line (:Line)
+
+SubClassOf(:Line :Independenty_entity)
+
+# Class: :LineStation_1 (:LineStation_1)
+
+EquivalentClasses(:LineStation_1 ObjectUnionOf(:Jubilee_L1 :Station_L1))
+SubClassOf(:LineStation_1 :Domain_entity)
+
+# Class: :LineStation_2 (:LineStation_2)
+
+EquivalentClasses(:LineStation_2 ObjectUnionOf(:Bakerloo_L2 :Station_L2))
+SubClassOf(:LineStation_2 :Domain_entity)
+
+# Class: :Passenger (:Passenger)
+
+SubClassOf(:Passenger :Person)
+
+# Class: :Person (:Person)
+
+SubClassOf(:Person :Independenty_entity)
+
+# Class: :Station (:Station)
+
+SubClassOf(:Station :Independenty_entity)
+
+# Class: :Station_L1 (:Station_L1)
+
+SubClassOf(:Station_L1 :Station)
+
+# Class: :Station_L2 (:Station_L2)
+
+SubClassOf(:Station_L2 :Station)
+
+# Class: :Train (:Train)
+
+SubClassOf(:Train :Independenty_entity)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :Baker_Street (:Baker_Street)
+
+AnnotationAssertion(rdfs:comment :Baker_Street "Connection Station between Jubilee Line and Bakerloo Line")
+ClassAssertion(:Station_L1 :Baker_Street)
+ClassAssertion(:Station_L2 :Baker_Street)
+
+# Individual: :Bermondsey (:Bermondsey)
+
+ClassAssertion(:Station_L1 :Bermondsey)
+
+# Individual: :Bond_Street (:Bond_Street)
+
+ClassAssertion(:Station_L1 :Bond_Street)
+
+# Individual: :Canada_Water (:Canada_Water)
+
+ClassAssertion(:Station_L1 :Canada_Water)
+
+# Individual: :Canary_Wharf (:Canary_Wharf)
+
+ClassAssertion(:Station_L1 :Canary_Wharf)
+
+# Individual: :Canning_Town (:Canning_Town)
+
+ClassAssertion(:Station_L1 :Canning_Town)
+
+# Individual: :Canons_Park (:Canons_Park)
+
+ClassAssertion(:Station_L1 :Canons_Park)
+
+# Individual: :Charing_Cross (:Charing_Cross)
+
+ClassAssertion(:Station_L2 :Charing_Cross)
+
+# Individual: :Dollis_Hill (:Dollis_Hill)
+
+ClassAssertion(:Station_L1 :Dollis_Hill)
+
+# Individual: :Driver_1 (:Driver_1)
+
+ClassAssertion(:Driver :Driver_1)
+ObjectPropertyAssertion(:drives :Driver_1 :Train_1)
+DataPropertyAssertion(:age :Driver_1 "35"^^xsd:integer)
+DataPropertyAssertion(:driverID :Driver_1 "001"^^xsd:integer)
+DataPropertyAssertion(:first_name :Driver_1 "William"^^xsd:string)
+DataPropertyAssertion(:gender :Driver_1 "M"^^xsd:string)
+DataPropertyAssertion(:last_name :Driver_1 "Baltmore"^^xsd:string)
+
+# Individual: :Driver_2 (:Driver_2)
+
+ClassAssertion(:Driver :Driver_2)
+ObjectPropertyAssertion(:drives :Driver_2 :Train_2)
+DataPropertyAssertion(:age :Driver_2 "28"^^xsd:integer)
+DataPropertyAssertion(:driverID :Driver_2 "002"^^xsd:integer)
+DataPropertyAssertion(:first_name :Driver_2 "Clive"^^xsd:string)
+DataPropertyAssertion(:gender :Driver_2 "M"^^xsd:string)
+DataPropertyAssertion(:last_name :Driver_2 "Daymore"^^xsd:string)
+
+# Individual: :Driver_3 (:Driver_3)
+
+ClassAssertion(:Driver :Driver_3)
+ObjectPropertyAssertion(:drives :Driver_3 :Train_3)
+DataPropertyAssertion(:age :Driver_3 "45"^^xsd:integer)
+DataPropertyAssertion(:driverID :Driver_3 "003"^^xsd:integer)
+DataPropertyAssertion(:first_name :Driver_3 "Suzan"^^xsd:string)
+DataPropertyAssertion(:gender :Driver_3 "F"^^xsd:string)
+DataPropertyAssertion(:last_name :Driver_3 "Nikeia"^^xsd:string)
+
+# Individual: :Driver_4 (:Driver_4)
+
+ClassAssertion(:Driver :Driver_4)
+ObjectPropertyAssertion(:drives :Driver_4 :Train_4)
+DataPropertyAssertion(:age :Driver_4 "41"^^xsd:integer)
+DataPropertyAssertion(:driverID :Driver_4 "004"^^xsd:integer)
+DataPropertyAssertion(:first_name :Driver_4 "Patricia"^^xsd:string)
+DataPropertyAssertion(:gender :Driver_4 "F"^^xsd:string)
+DataPropertyAssertion(:last_name :Driver_4 "Borges"^^xsd:string)
+
+# Individual: :Edgeware_Road (:Edgeware_Road)
+
+ClassAssertion(:Station_L2 :Edgeware_Road)
+
+# Individual: :Embankment (:Embankment)
+
+ClassAssertion(:Station_L2 :Embankment)
+
+# Individual: :Finchley_Road (:Finchley_Road)
+
+ClassAssertion(:Station_L1 :Finchley_Road)
+
+# Individual: :Green_Park (:Green_Park)
+
+ClassAssertion(:Station_L1 :Green_Park)
+
+# Individual: :Harlesden (:Harlesden)
+
+ClassAssertion(:Station_L2 :Harlesden)
+
+# Individual: :Kensal_Green (:Kensal_Green)
+
+ClassAssertion(:Station_L2 :Kensal_Green)
+
+# Individual: :Kenton (:Kenton)
+
+ClassAssertion(:Station_L2 :Kenton)
+
+# Individual: :KilBurn_Park (:KilBurn_Park)
+
+ClassAssertion(:Station_L2 :KilBurn_Park)
+
+# Individual: :Kilburn (:Kilburn)
+
+ClassAssertion(:Station_L1 :Kilburn)
+
+# Individual: :Kingsbury (:Kingsbury)
+
+ClassAssertion(:Station_L1 :Kingsbury)
+
+# Individual: :Lambeth_North (:Lambeth_North)
+
+ClassAssertion(:Station_L2 :Lambeth_North)
+
+# Individual: :London_Bridge (:London_Bridge)
+
+ClassAssertion(:Station_L1 :London_Bridge)
+
+# Individual: :Maida_Vale (:Maida_Vale)
+
+ClassAssertion(:Station_L2 :Maida_Vale)
+
+# Individual: :Marylebone (:Marylebone)
+
+ClassAssertion(:Station_L2 :Marylebone)
+
+# Individual: :Neasden (:Neasden)
+
+ClassAssertion(:Station_L1 :Neasden)
+
+# Individual: :North_Greenwich (:North_Greenwich)
+
+ClassAssertion(:Station_L1 :North_Greenwich)
+
+# Individual: :North_Wembley (:North_Wembley)
+
+ClassAssertion(:Station_L2 :North_Wembley)
+
+# Individual: :Oxford_Circus (:Oxford_Circus)
+
+ClassAssertion(:Station_L2 :Oxford_Circus)
+
+# Individual: :Paddingoton (:Paddingoton)
+
+ClassAssertion(:Station_L2 :Paddingoton)
+
+# Individual: :Passenger_1 (:Passenger_1)
+
+ClassAssertion(:Passenger :Passenger_1)
+DataPropertyAssertion(:first_name :Passenger_1 "Paul"^^xsd:string)
+DataPropertyAssertion(:gender :Passenger_1 "M"^^xsd:string)
+DataPropertyAssertion(:last_name :Passenger_1 "Newman"^^xsd:string)
+
+# Individual: :Passenger_2 (:Passenger_2)
+
+ClassAssertion(:Passenger :Passenger_2)
+DataPropertyAssertion(:first_name :Passenger_2 "Mariah"^^xsd:string)
+DataPropertyAssertion(:gender :Passenger_2 "F"^^xsd:string)
+DataPropertyAssertion(:last_name :Passenger_2 "Toller"^^xsd:string)
+
+# Individual: :Passenger_3 (:Passenger_3)
+
+ClassAssertion(:Passenger :Passenger_3)
+DataPropertyAssertion(:first_name :Passenger_3 "Peter"^^xsd:string)
+DataPropertyAssertion(:gender :Passenger_3 "M"^^xsd:string)
+DataPropertyAssertion(:last_name :Passenger_3 "Brand"^^xsd:string)
+
+# Individual: :Passenger_4 (:Passenger_4)
+
+ClassAssertion(:Passenger :Passenger_4)
+DataPropertyAssertion(:first_name :Passenger_4 "Holly"^^xsd:string)
+DataPropertyAssertion(:gender :Passenger_4 "F"^^xsd:string)
+DataPropertyAssertion(:last_name :Passenger_4 "Star"^^xsd:string)
+
+# Individual: :Piccadilly_Circus (:Piccadilly_Circus)
+
+ClassAssertion(:Station_L2 :Piccadilly_Circus)
+
+# Individual: :Queens_Park (:Queens_Park)
+
+ClassAssertion(:Station_L2 :Queens_Park)
+
+# Individual: :Queensbury (:Queensbury)
+
+ClassAssertion(:Station_L1 :Queensbury)
+
+# Individual: :Regents_Park (:Regents_Park)
+
+ClassAssertion(:Station_L2 :Regents_Park)
+
+# Individual: :ST_Johns_wood (:ST_Johns_wood)
+
+ClassAssertion(:Station_L1 :ST_Johns_wood)
+
+# Individual: :South_Kenton (:South_Kenton)
+
+ClassAssertion(:Station_L2 :South_Kenton)
+
+# Individual: :Southwark (:Southwark)
+
+ClassAssertion(:Station_L1 :Southwark)
+
+# Individual: :Starnmore (:Starnmore)
+
+AnnotationAssertion(rdfs:comment :Starnmore "Final Station of Jubilee")
+ClassAssertion(:Station_L1 :Starnmore)
+
+# Individual: :Stonebridge_Park (:Stonebridge_Park)
+
+ClassAssertion(:Station_L2 :Stonebridge_Park)
+
+# Individual: :Stratford (:Stratford)
+
+AnnotationAssertion(rdfs:comment :Stratford "Final Station of Jubiee")
+ClassAssertion(:Station_L1 :Stratford)
+
+# Individual: :Swiss_Cottage (:Swiss_Cottage)
+
+ClassAssertion(:Station_L1 :Swiss_Cottage)
+
+# Individual: :Train_1 (:Train_1)
+
+ClassAssertion(:Train :Train_1)
+DataPropertyAssertion(:trainID :Train_1 "001"^^xsd:integer)
+
+# Individual: :Train_2 (:Train_2)
+
+ClassAssertion(:Train :Train_2)
+DataPropertyAssertion(:trainID :Train_2 "002"^^xsd:integer)
+
+# Individual: :Train_3 (:Train_3)
+
+ClassAssertion(:Train :Train_3)
+DataPropertyAssertion(:trainID :Train_3 "003"^^xsd:integer)
+
+# Individual: :Train_4 (:Train_4)
+
+ClassAssertion(:Train :Train_4)
+DataPropertyAssertion(:trainID :Train_4 "004"^^xsd:integer)
+
+# Individual: :Warwick_Avenue (:Warwick_Avenue)
+
+ClassAssertion(:Station_L2 :Warwick_Avenue)
+
+# Individual: :Waterloo (:Waterloo)
+
+AnnotationAssertion(rdfs:comment :Waterloo "Connection Station between Jubilee Line and Bakerloo Line")
+ClassAssertion(:Station_L1 :Waterloo)
+ClassAssertion(:Station_L2 :Waterloo)
+
+# Individual: :Wembley_Central (:Wembley_Central)
+
+ClassAssertion(:Station_L2 :Wembley_Central)
+
+# Individual: :Wembley_Park (:Wembley_Park)
+
+ClassAssertion(:Station_L1 :Wembley_Park)
+
+# Individual: :West_Ham (:West_Ham)
+
+ClassAssertion(:Station_L1 :West_Ham)
+
+# Individual: :West_Hampstead (:West_Hampstead)
+
+ClassAssertion(:Station_L1 :West_Hampstead)
+
+# Individual: :Westminster (:Westminster)
+
+ClassAssertion(:Station_L1 :Westminster)
+
+# Individual: :Willesden_Green (:Willesden_Green)
+
+ClassAssertion(:Station_L1 :Willesden_Green)
+
+# Individual: :Wilsenden_Junction (:Wilsenden_Junction)
+
+ClassAssertion(:Station_L2 :Wilsenden_Junction)
+
+# Individual: <http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Elephant_&_Castle> (<http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Elephant_&_Castle>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Elephant_&_Castle> "Final Station of Bakerloo Line")
+ClassAssertion(:Station_L2 <http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Elephant_&_Castle>)
+
+# Individual: <http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Harrow_&_Wealdstone> (<http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Harrow_&_Wealdstone>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Harrow_&_Wealdstone> "Final Station of Bakerloo")
+ClassAssertion(:Station_L2 <http://www.semanticweb.org/dviga/ontologies/2020/4/cw2#Harrow_&_Wealdstone>)
+
+
+DisjointClasses(:Line :Person :Station :Train)
+)
